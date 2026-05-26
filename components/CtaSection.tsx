@@ -30,18 +30,20 @@ export default function CtaSection() {
         <div className="px-margin-desktop max-w-container-max mx-auto text-center relative z-10">
           <h2 className="font-press-start text-4xl md:text-6xl text-secondary mb-12 tracking-tighter">GET ROTMAXXED</h2>
           <div className="flex flex-col md:flex-row gap-6 justify-center">
-            <button className="flex items-center gap-4 bg-inverse-on-surface text-on-surface border border-outline/50 px-8 py-4 rounded-xl hover:bg-surface-container-high transition-all group">
+            {/* Primary CTA — App Store */}
+            <button className="flex items-center gap-4 bg-primary text-on-primary px-8 py-4 rounded-xl transition-all glow-pink group">
               <span className="material-symbols-outlined text-4xl" data-weight="fill">phone_iphone</span>
               <div className="text-left">
-                <div className="text-[10px] uppercase font-label-pixel text-outline group-hover:text-secondary">Download on the</div>
+                <div className="text-[10px] uppercase font-label-pixel opacity-70">Download on the</div>
                 <div className="text-xl font-bold font-headline-md leading-none">App Store</div>
               </div>
             </button>
-            <button className="flex items-center gap-4 bg-inverse-on-surface text-on-surface border border-outline/50 px-8 py-4 rounded-xl hover:bg-surface-container-high transition-all group">
-              <span className="material-symbols-outlined text-4xl" data-weight="fill">play_arrow</span>
+            {/* Secondary CTA — Google Play */}
+            <button className="flex items-center gap-4 bg-transparent text-secondary border-2 border-secondary/50 px-8 py-4 rounded-xl hover:bg-secondary/10 hover:border-secondary transition-all group neon-border">
+              <span className="material-symbols-outlined text-4xl text-secondary" data-weight="fill">play_arrow</span>
               <div className="text-left">
-                <div className="text-[10px] uppercase font-label-pixel text-outline group-hover:text-primary">Get it on</div>
-                <div className="text-xl font-bold font-headline-md leading-none">Google Play</div>
+                <div className="text-[10px] uppercase font-label-pixel text-secondary/60 group-hover:text-secondary transition-colors">Get it on</div>
+                <div className="text-xl font-bold font-headline-md leading-none text-secondary">Google Play</div>
               </div>
             </button>
           </div>

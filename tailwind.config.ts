@@ -71,22 +71,27 @@ const config: Config = {
         "unit": "4px",
       },
       fontFamily: {
-        "headline-md": ["Space Mono"],
-        "headline-lg": ["Space Mono"],
-        "body-standard": ["Outfit"],
-        "body-dialogue": ["Courier Prime"],
+        // Display/hero titles → Press Start 2P (8-bit, maximum impact)
+        "headline-md": ['"Press Start 2P"', "cursive"],
+        "headline-lg": ['"Press Start 2P"', "cursive"],
+        "headline-lg-mobile": ['"Press Start 2P"', "cursive"],
+        // Body/terminal/dialogue → VT323 (readable, CRT-terminal feel)
+        "body-standard": ['"VT323"', "monospace"],
+        "body-dialogue": ['"VT323"', "monospace"],
+        // Labels/tags/metadata → Space Mono (tight, technical, UI utility)
         "label-pixel": ["Space Mono"],
-        "headline-lg-mobile": ["Space Mono"],
+        // Named aliases for explicit use
         "press-start": ['"Press Start 2P"', "cursive"],
         "vt323": ['"VT323"', "monospace"],
+        "outfit": ["Outfit", "sans-serif"],
       },
       fontSize: {
-        "headline-md": ["18px", { lineHeight: "24px", fontWeight: "700" }],
-        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.05em", fontWeight: "700" }],
-        "body-standard": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
-        "body-dialogue": ["18px", { lineHeight: "24px", fontWeight: "400" }],
+        "headline-md": ["14px", { lineHeight: "22px", fontWeight: "700", letterSpacing: "0.05em" }],
+        "headline-lg": ["20px", { lineHeight: "30px", letterSpacing: "0.03em", fontWeight: "700" }],
+        "body-standard": ["20px", { lineHeight: "1.5", fontWeight: "400" }],
+        "body-dialogue": ["22px", { lineHeight: "30px", fontWeight: "400" }],
         "label-pixel": ["10px", { lineHeight: "12px", fontWeight: "700" }],
-        "headline-lg-mobile": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+        "headline-lg-mobile": ["13px", { lineHeight: "22px", fontWeight: "700" }],
       },
       maxWidth: {
         "container-max": "1200px",

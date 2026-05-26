@@ -3,11 +3,12 @@ import { useEffect } from "react";
 
 export default function HeroSection() {
   useEffect(() => {
+    // Subtle parallax depth on the hero ambient glow — no full-body filter
     const handler = () => {
       const pos = window.scrollY;
-      if (pos % 500 < 5) {
-        document.body.style.filter = `hue-rotate(${pos / 10}deg)`;
-        setTimeout(() => { document.body.style.filter = "none"; }, 50);
+      const hero = document.getElementById("hero-glow");
+      if (hero) {
+        hero.style.transform = `translateY(${pos * 0.3}px)`;
       }
     };
     window.addEventListener("scroll", handler, { passive: true });
@@ -41,7 +42,12 @@ export default function HeroSection() {
 
       {/* ── Desktop Hero (hidden below md) ──────────────────────────────── */}
       <section className="hidden md:flex min-h-[921px] flex-col items-center justify-center text-center px-margin-mobile relative overflow-hidden">
-        <div className="mb-8 floating-panda">
+        {/* Parallax ambient glow */}
+        <div id="hero-glow" className="absolute inset-0 pointer-events-none will-change-transform">
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[120px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-[#FF49DB]/10 rounded-full blur-[80px]" />
+        </div>
+        <div className="mb-8 floating-panda relative z-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             alt="A stylized, gothic digital panda illustration with glowing cyan eyes and neon pink accents."
@@ -49,13 +55,13 @@ export default function HeroSection() {
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDf8qCSON5wx9Llb10BkRbmgLx5ITYpVdeqUYYQ_do5w7okTmBr0wmh8zQ1SnsMls778Q-RrTrIk_nhP51ODDIan1mL4_fCNlekOzp6y3rcqY6bvseVfdkz3oIdZTr-1TMDn30GHfKv7ok3rVQroydV5uVDa5wojRgrJKfKzSL-QtHAdIkmmUERPsZfMc9CXKEEnM7GDzIkZVhfxWDARdLajySJ0XfcTjY0w6NXM-u2BNtCzS0ogtiYY72zLmMHKEtGZoVGa6T278"
           />
         </div>
-        <h1 className="font-press-start text-4xl md:text-7xl mb-6 text-primary tracking-tighter leading-tight filter drop-shadow-[0_0_10px_rgba(208,188,255,0.5)]">
+        <h1 className="relative z-10 font-press-start text-4xl md:text-7xl mb-6 text-primary tracking-tighter leading-tight filter drop-shadow-[0_0_10px_rgba(208,188,255,0.5)]">
           ENTER THE <br /> <span className="text-[#FF49DB] animate-pulse">VOID</span>
         </h1>
-        <p className="font-vt323 text-2xl md:text-3xl text-on-surface-variant max-w-2xl mb-10 terminal-cursor">
+        <p className="relative z-10 font-vt323 text-2xl md:text-3xl text-on-surface-variant max-w-2xl mb-10 terminal-cursor">
           Your new digital companion is hungry for data. Feed it your attention, or watch it rot in the neon-soaked abyss of the Pandalini Den.
         </p>
-        <button className="font-headline-md text-headline-md uppercase bg-[#8B5CF6] text-white px-10 py-5 rounded-lg transition-all glow-pink">
+        <button className="relative z-10 font-headline-md text-headline-md uppercase bg-[#8B5CF6] text-white px-10 py-5 rounded-lg transition-all glow-pink">
           DOWNLOAD NOW
         </button>
       </section>

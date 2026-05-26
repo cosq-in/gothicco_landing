@@ -13,10 +13,12 @@ export default function Navbar() {
 
   return (
     <header
-      className={`w-full sticky top-0 z-50 border-b border-outline-variant/30 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md" : "bg-background/80 backdrop-blur-md"
+      className={`w-full sticky top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-primary/30"
+          : "bg-transparent border-b border-transparent"
       }`}
-      style={{ boxShadow: "0 0 15px rgba(208,188,255,0.2)" }}
+      style={scrolled ? { boxShadow: "0 0 20px rgba(208,188,255,0.25), 0 1px 0 rgba(208,188,255,0.1)" } : {}}
     >
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
         {/* Logo — mobile uses headline-lg-mobile, desktop uses headline-lg */}

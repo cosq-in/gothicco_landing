@@ -20,7 +20,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="font-label-pixel text-label-pixel uppercase text-outline text-center md:text-right">
-          © 2024 CosQ Entertainments. Stay Rotmaxing.
+          © 2025 CosQ Entertainments. Stay Rotmaxing.
         </p>
       </div>
     </footer>
